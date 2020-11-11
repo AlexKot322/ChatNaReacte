@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import queryString from "query-string";
 import io from "socket.io-client";
 
+
 import "./Chat.css";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 import Messages from "../Messages/Messages";
 import SideBar from "../SideBar/SideBar";
+import FetchRandomUser from "./FetchRandomUser";
+
 
 let socket;
 
@@ -50,6 +53,7 @@ const Chat = ({ location }) => {
     }
   };
   return (
+    <div>
     <div className="chat-container">
         <InfoBar room={room} />
         <div className="chat-main">
@@ -57,6 +61,16 @@ const Chat = ({ location }) => {
         <Messages messages={messages} name={name}/>
       </div>
       <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
+    </div>
+    <div className="ourUsers">
+      <h1>Наши пользователи</h1>
+    <div className="items">
+    <FetchRandomUser />
+    <FetchRandomUser />
+    <FetchRandomUser />
+    <FetchRandomUser />
+    </div>
+    </div>
     </div>
   );
 };
