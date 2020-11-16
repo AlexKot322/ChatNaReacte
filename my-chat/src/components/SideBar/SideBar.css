@@ -10,8 +10,14 @@
 	background: rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	margin-bottom: 20px;
+	
 }
-
+.userAndPhoto {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
 .chat-sidebar h3 {
 	margin-bottom: 15px;
 }

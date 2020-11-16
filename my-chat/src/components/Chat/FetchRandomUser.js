@@ -22,23 +22,20 @@ export default class FetchRandomUser extends React.Component {
             return <div>We have a problems...</div>
         }
         return (
-            <div className="cardPerson">
-                <img src={this.state.person.picture.large} />
-                <div className="fullName">
-                <div>{this.state.person.name.first}</div>
-                <div>{this.state.person.name.last}</div>
-                </div>
-                <div className="location">
-                <div>{this.state.person.location.city}</div>
-                <div>{this.state.person.location.country}</div>
-                </div>
-                <div className="contacts">
-                <a className="email" href={this.state.person.email}>{this.state.person.email}</a>
-                <div>{this.state.person.phone}</div>
-                </div>
+                <img className="randomPhoto" src={this.state.person.picture.large} />
+                // {/* <div className="fullName">
+                // <div>{this.state.person.name.first}</div>
+                // <div>{this.state.person.name.last}</div>
+                // </div>
+                // <div className="location">
+                // <div>{this.state.person.location.city}</div>
+                // <div>{this.state.person.location.country}</div>
+                // </div>
+                // <div className="contacts">
+                // <a className="email" href={this.state.person.email}>{this.state.person.email}</a>
+                // <div>{this.state.person.phone}</div>
+                // </div> */}
                 
-                
-            </div>
         );
     }
 }

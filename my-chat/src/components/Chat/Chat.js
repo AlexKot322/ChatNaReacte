@@ -62,15 +62,6 @@ const Chat = ({ location }) => {
       </div>
       <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
     </div>
-    <div className="ourUsers">
-      <h1>Наши пользователи</h1>
-    <div className="items">
-    <FetchRandomUser />
-    <FetchRandomUser />
-    <FetchRandomUser />
-    <FetchRandomUser />
-    </div>
-    </div>
     </div>
   );
 };

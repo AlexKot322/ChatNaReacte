@@ -3,6 +3,7 @@ import React from 'react';
 
 
 import onlineIcon from '../../icons/onlineIcon.png';
+import FetchRandomUser from '../Chat/FetchRandomUser';
 
 import './SideBar.css';
 
@@ -19,11 +20,11 @@ const SideBar = ({ room, users }) => (
         ? (
           <div>
             <div>
-              <h2>
+              <h2> 
                 {users.map(({name}) => (
-                  <div key={name}>
+                  <div className="userAndPhoto" key={name}>
                     {name}
-                    <img className="icon" alt="Online Icon" src={onlineIcon} />
+                    <FetchRandomUser />
                   </div>
                 ))}
               </h2>
