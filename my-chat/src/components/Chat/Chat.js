@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from "react";
 import queryString from "query-string";
-import io from "socket.io-client";
-
+import io, { connect } from "socket.io-client";
 
 import "./Chat.css";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 import Messages from "../Messages/Messages";
 import SideBar from "../SideBar/SideBar";
-import FetchRandomUser from "./FetchRandomUser";
+
 
 
 let socket;
-
-const Chat = ({ location }) => {
+const ENDPOINT = "localhost:5000";
+socket = io(ENDPOINT)
+const Chat = ({ dispatch, location, loading, avatar, hasErrors }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "localhost:5000";
+
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
-    socket = io(ENDPOINT);
 
     setName(name);
     setRoom(room);
@@ -66,4 +65,7 @@ const Chat = ({ location }) => {
   );
 };
 
+
+
 export default Chat;
+

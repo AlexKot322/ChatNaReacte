@@ -1,29 +1,56 @@
 import * as types from '../constants/ActionTypes'
 
-let nextMessageId = 0
-let nextUserId = 0
 
-export const addMessage = (message, author) => ({
-	type: types.ADD_MESSAGE,
-	id: nextMessageId++,
-	message,
-	author
-})
+export const addMessage = (data) => dispatch => {
+	dispatch({
+		type: types.ADD_MESSAGE,
+		payload: data
+	})
+}
 
-export const addUser = name => ({
-	type: types.ADD_USER,
-	id: nextUserId++,
-	name
-})
+export const sendMessage = (data) => dispatch => {
+	dispatch({
+		type : types.SEND_MESSAGE,
+		payload: data
+	})
+}
 
-export const messageReceived = (message, author) => ({
-	type : types.MESSAGE_RECEIVED,
-	id: nextMessageId++,
-	message,
-	author
-})
+export const addUser = (data) => dispatch => {
+	dispatch({
+		type: types.ADD_USER,
+		payload: data
+	})
+}
 
-export const populateUsersList = users => ({
-	type: types.USERS_LIST,
-	users
-})
+export const populateUsersList = (data) => dispatch => {
+	dispatch({
+		type: types.USERS_LIST,
+		payload: data
+	})
+}
+export const setName = (data) => dispatch => {
+	dispatch({
+		type: types.ADD_NAME,
+    	payload: data
+	})
+}
+export const setRoom = (data) => dispatch => {
+	dispatch({
+		type: types.ADD_ROOM,
+    	payload: data
+	})
+}
+
+export const openWebsocket = (endpoint) => dispatch => {
+	dispatch({
+	  type: OPEN_WEBSOCKET,
+	  payload: endpoint
+	})
+  }
+  
+  export const updateSocketObject = (socket) => dispatch => {
+	dispatch({
+	  type: UPDATE_SOCKET_OBJECT,
+	  payload: socket
+	})
+  }

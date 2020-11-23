@@ -1,13 +1,11 @@
 import React from 'react';
 
-
-
-import onlineIcon from '../../icons/onlineIcon.png';
 import FetchRandomUser from '../Chat/FetchRandomUser';
+
 
 import './SideBar.css';
 
-const SideBar = ({ room, users }) => (
+const SideBar = ({ room, users, avatar }) => (
     <div className="chat-sidebar">
         <h3>Комната:</h3>
         <h2>{room}</h2>

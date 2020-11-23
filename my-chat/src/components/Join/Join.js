@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 import "./Join.css";
 
 const Join = () => {
+
+
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   return (
@@ -29,6 +32,7 @@ const Join = () => {
             onChange={(event) => setRoom(event.target.value)}
           />
         </div>
+
         <Link
           onClick={(event) => (!name || !room ? event.preventDefault() : null)}
           to={`/chat?name=${name}&room=${room}`}
